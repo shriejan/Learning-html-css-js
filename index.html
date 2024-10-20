@@ -167,8 +167,45 @@
 
 <div class="box1">Thi sis same box but ising difernet properties</div>
 
+<p id="shrijan_id"> this is a cat  </p>
+    
+<script>
+    function change_color(){
+        document.getElementById("shrijan_id").style.color="pink";
+    };
 
-    </body>
+    function change_color2(){
+        document.getElementById("shrijan_id").style.color="blue";
+    };
+
+
+
+</script>
+
+<button onclick="change_color()">click me</button>
+<button onclick="change_color2()">click me too</button><br>
+    
+<img id="blb" height="200" src="https://i.pinimg.com/originals/e0/fd/25/e0fd25f9127a9a109a0648c83ee61643.png">
+
+
+
+<script>
+    function turn_on_bulb(){
+        document.getElementById("blb").src = "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/MSNBC/Components/Photo/_new/081209-light-bulb-03.jpg"
+    };
+
+    function turn_off_bulb(){
+        document.getElementById("blb").src = "https://i.pinimg.com/originals/e0/fd/25/e0fd25f9127a9a109a0648c83ee61643.png";
+    };
+
+
+
+</script>
+<br>
+<button onclick="turn_on_bulb()">turn on bulb</button>
+<button onclick="turn_off_bulb()">turn off bulb</button>
+
+</body>
 
 
 
