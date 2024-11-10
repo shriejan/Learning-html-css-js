@@ -255,8 +255,32 @@ function get_by_class(){
 
 <p style="text-align: center; font-weight: bold; font-style: italic; text-decoration: underline;">\Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quas veniam est corrupti amet tenetur eius vero sapiente nostrum nisi, dolorem fugit a ut, alias vel enim ratione cum deserunt.</p>
 
+
+<br>
+<p>hello my fav fruits are 
+    <em style="font-size: 70%;">    {{ colors }}    </em> 
+
+</p>
+
+<p>the name and age dictionary is {{ name_age }}</p>
+
+
+<ol style="background-color: #0b81ff;">
+    {% for color in colors %}
+    <li style="color: beige;">{{ color }}</li>
+    {% endfor %}
+</ol>
+
+
 </body>
 
+<!-- apply a loop on dictionary -->
+ <div style="background-color: #36bd15; text-align: center;"> 
+ {% for key, value in name_age.items() %}
 
+<p> the name is {{ key }} and age is {{ value }}</p> 
+
+ {% endfor %}
+</div>
 
 </html>
