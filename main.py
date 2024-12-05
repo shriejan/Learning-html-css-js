@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
+from myFunctions import BMI_calculator
 app = Flask(__name__)
 
 @app.route('/')
@@ -17,6 +17,20 @@ def index():
 @app.route('/shriejan')
 def index2():
     return 'Hello, Shriejan!'
+
+
+@app.route('/bmi_calculator',methods=['GET','POST'])
+def index3():
+    weight  = request.form.get('weight')
+    height = request.form.get('height')
+    
+    weight = float(weight)
+    height = float(height)
+    BMI, status = BMI_calculator(weight, height)
+    
+    
+
+    return render_template('bmi_calculator.html',BMI = BMI, status = status)
 
 
 

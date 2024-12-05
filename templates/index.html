@@ -283,4 +283,21 @@ function get_by_class(){
  {% endfor %}
 </div>
 
+<!-- make input for weight and height and pass it to python -->
+
+<form action="/bmi_calculator", method="POST">
+    <label>weight</label>
+    <input type="text" name="weight" required><br>
+    
+    <label>height</label>
+    <!-- required  -->
+    <input type="text" required name="height"> <br>
+    
+    <button type="submit">submit</button>
+</form>
+
+
+
+
+
 </html>
