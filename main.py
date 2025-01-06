@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from myFunctions import BMI_calculator
+from my_database import Todolist
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -32,7 +34,17 @@ def index3():
 
     return render_template('bmi_calculator.html',BMI = BMI, status = status)
 
+todo = Todolist()
+@app.route('/todo',methods=['GET','POST'])
+def index4():
+    if request.method == 'POST': # check if the request is a POST request if somone submits the form
+        todo.add_task(request.form.get('number'),request.form.get('todo'))
+    
+    tasks = todo.get_all_tasks()
+    return render_template('todo.html',todo = tasks)
+    
 
+   
 
 if __name__ == '__main__':
     app.run(debug=True)
