@@ -65,9 +65,13 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-            if (prediction[i].probability > 0.5 ) {
+            if (prediction[i].probability > 0.8 && prediction[i].className == "hand") {
                 // change backgroudn to red
                 document.body.style.backgroundColor = "red";
+            }
+            if (prediction[i].probability > 0.8  && prediction[i].className == "hand" ) {
+                // change backgroudn to green
+                document.body.style.backgroundColor = "green";
             }
         }
     }
