@@ -69,6 +69,11 @@
                 // change backgroudn to red
                 document.body.style.backgroundColor = "red";
             }
+            if (prediction[i].probability > 0.1 && prediction[i].probability < 0.8 && prediction[i].className == "hand") {
+                // change backgroudn to pink
+                document.body.style.backgroundColor = "pink";
+                
+            }
             if (prediction[i].probability > 0.8  && prediction[i].className == "nohand" ) {
                 // change backgroudn to green
                 document.body.style.backgroundColor = "green";
