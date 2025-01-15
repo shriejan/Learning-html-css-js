@@ -21,12 +21,23 @@ const responses = { "hello": "Hi there! How can I help you?",
 
 // When i click button from html javascript should trigger a function to take input and to return back output to 
 function handleInput() {
-    const userInput = document.getElementById("user-input").value;
+    const userInputX = document.getElementById("user-input"); // get all propeties from text
+    const userInput = userInputX.value;
     const botResponse = responses[userInput.toLowerCase()] || "I'm sorry, I don't understand.";
     chatBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p><p><strong>Bot:</strong> ${botResponse}</p>`;
-    userInput.value = "";
+    userInputX.value = "";
+    // remove whatever is in the input box
+
 }
 
 sendBtn.addEventListener("click", handleInput);
+
+// add enter to send message 
+
+userInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        handleInput();
+    }
+});
 
 
